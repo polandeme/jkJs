@@ -14,6 +14,6 @@ jkJs
   - toggle
   - dom position
   - isShow  
-- ajax  
+- Ajax  
 - Others  
   - each  
