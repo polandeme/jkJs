@@ -3,7 +3,7 @@ jkJs
 ###自己编写的小的js库，针对自己平时开发，写的一些针对性的封装接口  
 ####To Do  
 - Envent  
-  - click √  
+  - click    √  
   - mouseover 
   - mouseout  
   - hover  
