@@ -24,9 +24,6 @@
         },
 
         each: function(el, callback) {
-            // for(var i = 0; i < el.length; i ++) {
-            //     callback(el[i]);
-            // }
         },
         click: function(callback) {
             var el = this.element;
@@ -34,6 +31,25 @@
                 console.log(this.element[i]);
                 this.element[i].addEventListener('click', callback, false);
             }
+        },
+        mover: function(callback) {
+            var el = this.element;
+            this.each(el, callback, 'mouseover');
+        },
+        // el: elements Array, e: event
+        each: function(el, callback, e) {
+            for(var i = 0; i<this.element.length; i ++) {
+                this.element[i].addEventListener(e, callback, false);
+            }
+        },
+        addEvent: function() {
+
+        },
+        text: function() {
+            this.dom_each(el, callback);
+        },
+        dom_each: function() {
+
         },
         add: function() {
             console.log('add test');
