@@ -49,7 +49,9 @@
             this.dom_each(el, callback);
         },
         dom_each: function() {
-
+            for(var i = 0; i < this.element.length; i++) {
+                this.element[i].
+            }
         },
         add: function() {
             console.log('add test');
