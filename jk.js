@@ -23,8 +23,8 @@
             return this;
         },
 
-        each: function(el, callback) {
-        },
+        // each: function(el, callback) {
+        // },
         click: function(callback) {
             var el = this.element;
             for(var i = 0; i< this.element.length; i ++) {
@@ -42,17 +42,28 @@
                 this.element[i].addEventListener(e, callback, false);
             }
         },
-        addEvent: function() {
+        // addEvent: function() {
 
-        },
+        // },
         text: function() {
-            this.dom_each(el, callback);
-        },
-        dom_each: function() {
+            var text = '';
+            var text_tmp = '';
             for(var i = 0; i < this.element.length; i++) {
-                this.element[i].
+                // console.log(this.element[i]);
+                text_tmp += this.element[i].childNodes[i];//.nodeValue;
+                console.log(text_tmp);
+                if(text_tmp === 'undefined'){
+                    text_tmp = '';
+                }
+                text += text_tmp;
             }
+            return text;
         },
+        // dom_each: function() {
+        //     // for(var i = 0; i < this.element.length; i++) {
+        //     //     this.element[i].dom
+        //     // }
+        // },
         add: function() {
             console.log('add test');
         }
