@@ -50,8 +50,7 @@
             var text_tmp = '';
             for(var i = 0; i < this.element.length; i++) {
                 // console.log(this.element[i]);
-                text_tmp += this.element[i].childNodes[i];//.nodeValue;
-                console.log(text_tmp);
+                text_tmp += this.element[i].outerHTML;//.nodeValue;
                 if(text_tmp === 'undefined'){
                     text_tmp = '';
                 }
