@@ -45,7 +45,7 @@
         // addEvent: function() {
 
         // },
-        text: function() {
+        html: function() {
             var text = '';
             var text_tmp = '';
             for(var i = 0; i < this.element.length; i++) {
