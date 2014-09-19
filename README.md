@@ -5,15 +5,17 @@ jkJs
 ####To Do  
 - Event  
   - click    √  
-  - mouseover 
-  - mouseout  
-  - hover  
+  - mouseover √
+  - mouseout  √
+  - hover  √
 - DOM  
   - css style  
   - hide, show  
   - toggle
   - dom position
   - isShow  
+  - html √  
+  - text √
 - Ajax  
 - Others  
   - each  

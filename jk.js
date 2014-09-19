@@ -35,6 +35,16 @@
         mover: function(callback) {
             var el = this.element;
             this.each(el, callback, 'mouseover');
+            return this;
+        },
+        mout: function(callback) {
+            var el = this.element; 
+            this.each(el, callback, 'mouseout');
+            return this;
+        },
+        hover: function(c, d) {
+            var el = this.element;
+            return this.mover(c).mout(d);//.each(el, d, 'mouseover');
         },
         // el: elements Array, e: event
         each: function(el, callback, e) {
@@ -45,18 +55,54 @@
         // addEvent: function() {
 
         // },
-        html: function() {
-            var text = '';
-            var text_tmp = '';
-            for(var i = 0; i < this.element.length; i++) {
-                // console.log(this.element[i]);
-                text_tmp += this.element[i].outerHTML;//.nodeValue;
-                if(text_tmp === 'undefined'){
+        html: function(html) {
+            var self = this;
+            function get_html() {
+                var html = '';
+                var html_tmp = '';
+                for(var i = 0; i < self.element.length; i++) {
+                    html_tmp += self.element[i].innerHTML;//.nodeValue;
+                    if(html_tmp === 'undefined'){
+                        html_tmp = '';
+                    }
+                    html += html_tmp;
+                    html_tmp = '';
+                }
+                return html;
+            }
+            function change_html(html) {
+                for(var i = 0; i < self.element.length; i++) {
+                    self.element[i].innerHTML = html;//.nodeValue;
+                }
+            }
+            html ? change_html(html) : get_html();
+        },
+        text: function(text) {
+            var self = this;
+            // 得到text
+            var change_text = function (text) {
+                for(var i = 0; i < self.element.length; i++) {
+                    self.element[i].firstChild.nodeValue = text;
+                    }
+                    return;
+                }
+            // 改变text 
+            // todo: 多层？
+            var get_text = function () {
+                console.log('ddddd');
+                var text = '';
+                var text_tmp = '';
+                for(var i = 0; i < self.element.length; i++) {
+                    text_tmp += self.element[i].firstChild.nodeValue;
+                    if(text_tmp === 'undefined') {
+                        text_tmp = ''
+                    }
+                    text += text_tmp;
                     text_tmp = '';
                 }
-                text += text_tmp;
+                return text;
             }
-            return text;
+            text ? change_text(text) : get_text();
         },
         // dom_each: function() {
         //     // for(var i = 0; i < this.element.length; i++) {
