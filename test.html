@@ -12,6 +12,12 @@
 	<div class="div">4</div>
     <script type="text/javascript" src="jk.js"></script>
 	<script type="text/javascript">
+		jk('.div').click(function() {
+			alert('test click');
+			console.log(jk(this));
+			// jk(this).style.color = 'red';
+			// console.log(this);
+		});
 		jk('#div1').mover(function() {
 			console.log('mouse over');
 		});

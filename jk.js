@@ -28,7 +28,7 @@
         click: function(callback) {
             var el = this.element;
             for(var i = 0; i< this.element.length; i ++) {
-                console.log(this.element[i]);
+                // console.log(this.element[i]);
                 this.element[i].addEventListener('click', callback, false);
             }
         },
@@ -109,6 +109,17 @@
         //     //     this.element[i].dom
         //     // }
         // },
+        css: function(obj) {
+            var el = this.element;
+            var obj_length = Object.getOwnPropertyNames(obj).length;
+            for(key in obj) {
+                console.log(key);
+                // var key = 'color'
+                console.log(obj[key]);
+                el[i].style[key]  = obj[key];
+            }
+            return this;
+        },
         add: function() {
             console.log('add test');
         }
