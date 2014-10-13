@@ -13,6 +13,10 @@
         element: [],
         init: function(el) {
             //el_flag: 判断是id,class,tag 
+            if(!el) {
+                console.log('ths');
+                return this;
+            }
             var el_flag;
             el_flag = el[0];
             this.element = [];
@@ -26,7 +30,7 @@
                 for(var i = 0; i < el.length; i++) {
                     this.element.push(el[i]);
                 }
-            }
+            } 
             return this;
         },
 
@@ -117,8 +121,12 @@
         css: function(obj) {
             var el = this.element;
             var obj_length = Object.getOwnPropertyNames(obj).length;
+            var attr = this.o2a(obj);
+            // To Do 循环嵌套，效率，封装循环
             for(key in obj) {
-                el[i].style[key]  = obj[key];
+                for(var i = 0; i < el.length; i++) {
+                    el[i].style[key]  = obj[key];
+                }
             }
             return this;
         },
@@ -128,11 +136,10 @@
         o2a: function(o) {
                  var a = [];
                  for(var key in o) {
-                    a.push(key);
+                    a.push({key: o[key]});
                  }
                  return a;
              }
-        }
     };
     jk.prototype.init.prototype = jk.prototype;
 
