@@ -2,6 +2,13 @@
     var jk = function(el) {
         return  new jk.prototype.init(el);
     };
+    /* 
+     * To Do
+     * 一些jk内部使用的方法待完善，参考jq extend
+     * 2014/10/13 22:10:21
+     */
+       
+      
     jk.prototype = {
         element: [],
         init: function(el) {
@@ -23,8 +30,6 @@
             return this;
         },
 
-        // each: function(el, callback) {
-        // },
         click: function(callback) {
             var el = this.element;
             for(var i = 0; i< this.element.length; i ++) {
@@ -113,15 +118,20 @@
             var el = this.element;
             var obj_length = Object.getOwnPropertyNames(obj).length;
             for(key in obj) {
-                console.log(key);
-                // var key = 'color'
-                console.log(obj[key]);
                 el[i].style[key]  = obj[key];
             }
             return this;
         },
         add: function() {
             console.log('add test');
+        },
+        o2a: function(o) {
+                 var a = [];
+                 for(var key in o) {
+                    a.push(key);
+                 }
+                 return a;
+             }
         }
     };
     jk.prototype.init.prototype = jk.prototype;
