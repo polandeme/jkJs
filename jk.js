@@ -124,9 +124,9 @@
             var attr = this.o2a(obj);
             // To Do 循环嵌套，效率，封装循环
             for(key in obj) {
-                for(var i = 0; i < el.length; i++) {
-                    el[i].style[key]  = obj[key];
-                }
+                el.forEach(function(value, i) { // forEach 不支持 7 、8
+                    el[i].style[key] = obj[key];
+                });
             }
             return this;
         },
