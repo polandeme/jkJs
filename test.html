@@ -3,6 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jk js</title>
+	<style>
+		#div1 {
+			width: 20px;
+			border: 1px solid red;
+		}
+	</style>
 </head>
 <body>
 	<div id="div1">ddd</div>
@@ -12,6 +18,7 @@
 	<div class="div">4</div>
     <script type="text/javascript" src="jk.js"></script>
 	<script type="text/javascript">
+		
 		jk('.div').click(function() {
 			alert('test click');
 			console.log(jk(this));

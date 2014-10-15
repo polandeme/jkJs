@@ -134,12 +134,21 @@
             console.log('add test');
         },
         o2a: function(o) {
-                 var a = [];
-                 for(var key in o) {
-                    a.push({key: o[key]});
-                 }
-                 return a;
+             var a = [];
+             for(var key in o) {
+                a.push({key: o[key]});
              }
+             return a;
+        },
+        // 显示效果
+        toggle: function() {
+
+        },
+        // 得到特定css值
+        get_style: function() {
+
+        }
+
     };
     jk.prototype.init.prototype = jk.prototype;
 
