@@ -121,8 +121,9 @@
         css: function(obj) {
             var el = this.element;
             var obj_length = Object.getOwnPropertyNames(obj).length;
-            var attr = this.o2a(obj);
+            // var attr = this.o2a(obj);
             // To Do 循环嵌套，效率，封装循环
+            //
             for(key in obj) {
                 el.forEach(function(value, i) { // forEach 不支持 7 、8
                     el[i].style[key] = obj[key];
@@ -142,13 +143,22 @@
         },
         // 显示效果
         toggle: function() {
-
+            var el = this.element;
+            var self = this;
+            var c_s;
+            el.forEach(function(value, i) {
+                c_s = self.get_style('display', el[i]);
+            });
+            var n_s = (c_s === 'block') ? 'none' : 'block';
+            self.css({'display': n_s});
+            return this;
         },
         // 得到特定css值
-        get_style: function() {
-
+        get_style: function(attr,el) {
+            // var el = this.element;
+            console.log(el);
+           return window.getComputedStyle(el, null)[attr];
         }
-
     };
     jk.prototype.init.prototype = jk.prototype;
 
