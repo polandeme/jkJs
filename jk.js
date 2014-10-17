@@ -158,7 +158,9 @@
             // var el = this.element;
             console.log(el);
            return window.getComputedStyle(el, null)[attr];
-        }
+        },
+        //scoll event
+
     };
     jk.prototype.init.prototype = jk.prototype;
 
