@@ -14,7 +14,6 @@
         init: function(el) {
             //el_flag: 判断是id,class,tag 
             if(!el) {
-                console.log('ths');
                 return this;
             }
             var el_flag;
@@ -36,10 +35,8 @@
 
         click: function(callback) {
             var el = this.element;
-            for(var i = 0; i< this.element.length; i ++) {
-                // console.log(this.element[i]);
-                this.element[i].addEventListener('click', callback, false);
-            }
+            this.each(el, callback, 'click');
+            return this;
         },
         mover: function(callback) {
             var el = this.element;
@@ -53,7 +50,7 @@
         },
         hover: function(c, d) {
             var el = this.element;
-            return this.mover(c).mout(d);//.each(el, d, 'mouseover');
+            return this.mover(c).mout(d);
         },
         // el: elements Array, e: event
         each: function(el, callback, e) {
@@ -61,9 +58,6 @@
                 this.element[i].addEventListener(e, callback, false);
             }
         },
-        // addEvent: function() {
-
-        // },
         html: function(html) {
             var self = this;
             function get_html() {
@@ -96,7 +90,7 @@
                     return;
                 }
             // 改变text 
-            // todo: 多层？
+            // To Do: 多层？
             var get_text = function () {
                 console.log('ddddd');
                 var text = '';
@@ -147,19 +141,41 @@
             var self = this;
             var c_s;
             el.forEach(function(value, i) {
-                c_s = self.get_style('display', el[i]);
+                c_s = self._get_style('display', el[i]);
             });
             var n_s = (c_s === 'block') ? 'none' : 'block';
             self.css({'display': n_s});
             return this;
         },
         // 得到特定css值
-        get_style: function(attr,el) {
+        _get_style: function(attr,el) {
             // var el = this.element;
-            console.log(el);
+            // console.log(el);
            return window.getComputedStyle(el, null)[attr];
         },
+        //hide method use display
+        hide: function() {
+            var el = this.element;
+            el.forEach(function(value, i) {
+                el[i].style.display = 'none';
+            })
+        }
         //scoll event
+        // To Do: e.type 
+        // _call_event: function(e) {
+        //     var el = this.element;
+        //     el.forEach(function(value, i) {
+        //         // el.
+        //     });
+        // },
+        // event_type: function(e) {
+        //     return e.type;
+        // }
+
+        // Ajax 
+        // url, data, dataType, cache, header, success, error;
+        //
+        
 
     };
     jk.prototype.init.prototype = jk.prototype;
