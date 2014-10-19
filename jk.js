@@ -175,6 +175,31 @@
         // Ajax 
         // url, data, dataType, cache, header, success, error;
         //
+        ajax: function() {
+            var request = new XMLHttpRequest();
+
+            var _data = data.data || null;
+            
+            request.open(data.type, data.url);
+
+            if(!!data.header) { // 存在header则设置
+                request.setRequestHeader(data.header);
+            }
+
+            request.onreadystatechange = function() {
+                if(request.readyState === 4 && request.status === 200) {
+                    var type = request.getResponseHeader('Content-Type');
+                    if(type === 'application/json') {
+                        data.success(JSON.parse(request.responseText)); 
+                    } else {
+                        console.log('error');
+                    }
+                } else{
+                    return request.status;
+                }
+            };
+            request.send(_data);
+        }
         
 
     };
