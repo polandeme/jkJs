@@ -125,9 +125,6 @@
             }
             return this;
         },
-        add: function() {
-            console.log('add test');
-        },
         o2a: function(o) {
              var a = [];
              for(var key in o) {
@@ -159,7 +156,7 @@
             el.forEach(function(value, i) {
                 el[i].style.display = 'none';
             })
-        }
+        },
         //scoll event
         // To Do: e.type 
         // _call_event: function(e) {
@@ -175,11 +172,11 @@
         // Ajax 
         // url, data, dataType, cache, header, success, error;
         //
-        ajax: function() {
+        ajax: function(data) {
             var request = new XMLHttpRequest();
 
             var _data = data.data || null;
-            
+
             request.open(data.type, data.url);
 
             if(!!data.header) { // 存在header则设置
@@ -192,7 +189,8 @@
                     if(type === 'application/json') {
                         data.success(JSON.parse(request.responseText)); 
                     } else {
-                        console.log('error');
+                        data.success(request.responseText);
+                        console.log('not json');
                     }
                 } else{
                     return request.status;
@@ -200,7 +198,6 @@
             };
             request.send(_data);
         }
-        
 
     };
     jk.prototype.init.prototype = jk.prototype;

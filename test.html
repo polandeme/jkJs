@@ -16,6 +16,7 @@
 	<div class="div">2</div>
 	<div class="div">3</div>
 	<div class="div">4</div>
+	<button class="btn">get</button>
     <script type="text/javascript" src="jk.js"></script>
 	<script type="text/javascript">
 		
@@ -28,5 +29,14 @@
 		jk('#div1').mover(function() {
 			console.log('mouse over');
 		});
+		jk('.btn').click(function() {
+			jk().ajax({
+				url: 'http://localhost/json/stu.json',
+				type: 'POST',
+				success: function(data) {
+					jk('.div').text(data.data);
+				}
+			});
+		})
 	</script>
 </html></body>
