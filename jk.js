@@ -1,3 +1,7 @@
+// _ 私有变量
+// 驼峰变量命名
+// 下划线函数命名
+// 
 (function() {
     var jk = function(el) {
         return  new jk.prototype.init(el);
@@ -160,6 +164,7 @@
                 el[i].style.display = 'none';
             })
         },
+<<<<<<< HEAD
         /*
          * To Do: input value 
          * val() 可以设置，可以得到
@@ -173,6 +178,18 @@
             var el = this.element;
             el.forEach()
         },
+=======
+        // remove node 
+        remove: function() {
+            var el = this.element;
+            el.forEach(function(value, i) {
+                var parentNode = el[i].parentNode;
+                var oldNode = parentNode.removeChild(el[i]); 
+            });
+            return this;
+        },
+        //To Do: index, eq method;
+>>>>>>> 82687a4bbcf43cecd2c18995e5b05ccf5606a447
         //scoll event
         // To Do: e.type 
         // _call_event: function(e) {
