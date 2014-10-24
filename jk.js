@@ -1,3 +1,7 @@
+// _ 私有变量
+// 驼峰变量命名
+// 下划线函数命名
+// 
 (function() {
     var jk = function(el) {
         return  new jk.prototype.init(el);
@@ -157,6 +161,16 @@
                 el[i].style.display = 'none';
             })
         },
+        // remove node 
+        remove: function() {
+            var el = this.element;
+            el.forEach(function(value, i) {
+                var parentNode = el[i].parentNode;
+                var oldNode = parentNode.removeChild(el[i]); 
+            });
+            return this;
+        },
+        //To Do: index, eq method;
         //scoll event
         // To Do: e.type 
         // _call_event: function(e) {
