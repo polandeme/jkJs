@@ -179,7 +179,7 @@
 
         // get the index of array
         index: function() {
-            var el this.element;
+            var el = this.element;
        },
         //To Do: index, eq method;
         //scoll event
