@@ -170,7 +170,7 @@
             var oldNode_A = [];
             var parentNode, oldNode;
             el.forEach(function(value, i) {
-                parentNode = el[i].parentNode;
+                parentNode = el[i].parentNode || null;
                 oldNode = parentNode.removeChild(el[i]); 
                 oldNode_A.push(oldNode_A);
             });
