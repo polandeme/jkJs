@@ -9,13 +9,13 @@ jkJs
   - mouseout  √
   - hover  √
 - DOM  
-  - css style  
-  - hide, show  
+  - css style  √
+  - hide, show  √
   - toggle
   - dom position
   - isShow  
   - html √  
   - text √
-- Ajax  
+- Ajax  √
 - Others  
   - each  
