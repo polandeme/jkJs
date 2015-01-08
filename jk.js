@@ -94,7 +94,7 @@
                     return;
                 }
             // 改变text 
-            // To Do: 多层？
+            // To Do: 多层?
             var get_text = function () {
                 console.log('ddddd');
                 var text = '';
@@ -111,11 +111,7 @@
             }
             text ? change_text(text) : get_text();
         },
-        // dom_each: function() {
-        //     // for(var i = 0; i < this.element.length; i++) {
-        //     //     this.element[i].dom
-        //     // }
-        // },
+        
         value: function() {
             
         },
