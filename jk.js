@@ -16,7 +16,7 @@
     jk.prototype = {
         element: [], // 全局变量 获取的元素的数组
         init: function(el) {
-            //el_flag: 判断是id,class,tag 
+            //el_flag: 判断是id,class,tag,,
             if(!el) {
                 return this;
             }
